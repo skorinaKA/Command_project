@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://storeEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.bookstore.web.screens.store">
+    <data>
+        <instance id="storeDc"
+                  class="com.company.bookstore.entity.Store">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="storeDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <textField id="addressField" property="address"/>
+                <timeField id="openning_timeField" property="openning_time"/>
+                <timeField id="closing_timeField" property="closing_time"/>
+                <checkBox id="statusField" property="status"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

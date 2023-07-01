@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://bookEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.bookstore.web.screens.book">
+    <data>
+        <instance id="bookDc"
+                  class="com.company.bookstore.entity.Book">
+            <view extends="_local">
+                <property name="genre" view="_minimal"/>
+                <property name="author" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="bookDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <pickerField id="genreField" property="genre">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="authorField" property="author">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <dateField id="publicationYearField" property="publicationYear"/>
+                <textField id="countField" property="count"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

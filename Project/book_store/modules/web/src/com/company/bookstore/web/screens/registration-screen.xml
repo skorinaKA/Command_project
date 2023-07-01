@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://registrationScreen.caption"
+        messagesPack="com.company.bookstore.web.screens">
+    <dialogMode width="400"/>
+    <layout>
+        <grid align="MIDDLE_CENTER"
+              spacing="true">
+            <columns count="2"/>
+            <rows>
+                <row>
+                    <label value="msg://registrationScreenLastName.caption" align="MIDDLE_LEFT"/>
+                    <textField id="lastNameField"
+                               required="true"/>
+                </row>
+                <row>
+                    <label value="msg://registrationScreenFirstName.caption" align="MIDDLE_LEFT"/>
+                    <textField id="firstNameField"
+                               required="true"/>
+                </row>
+                <row>
+                    <label value="msg://registrationScreenMiddleName.caption" align="MIDDLE_LEFT"/>
+                    <textField id="middleNameField"
+                               required="false"/>
+                </row>
+                <row>
+                    <label value="msg://registrationScreenDOB.caption" align="MIDDLE_LEFT"/>
+                    <dateField id="dateField" datatype="localDate" dateFormat="dd/MM/yyyy"/>
+                </row>
+                <row>
+                    <label value="msg://registrationScreenLogin.caption" align="MIDDLE_LEFT"/>
+                    <textField id="loginField"
+                               required="true"/>
+                </row>
+                <row>
+                    <label value="msg://registrationScreenPassword.caption" align="MIDDLE_LEFT"/>
+                    <passwordField id="passwordField"
+                                   required="true"/>
+                </row>
+                <row>
+                    <hbox align="MIDDLE_CENTER"
+                          colspan="2"
+                          spacing="true">
+                        <button id="okBtn"
+                                align="TOP_RIGHT"
+                                caption="OK"/>
+                        <button id="cancelBtn"
+                                caption="msg://registrationScreenCancel.caption"/>
+                    </hbox>
+                </row>
+            </rows>
+        </grid>
+    </layout>
+</window>
