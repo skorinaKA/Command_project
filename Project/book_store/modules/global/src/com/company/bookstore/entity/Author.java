@@ -5,6 +5,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Table(name = "BOOKSTORE_AUTHOR")
@@ -33,19 +34,19 @@ public class Author extends StandardEntity {
         this.lastName = lastName;
     }
 
-    public Date getYearOfBirth() {
+    public @NotNull LocalDate getYearOfBirth() {
         return yearOfBirth;
     }
 
-    public void setYearOfBirth(Date yearOfBirth) {
+    public void setYearOfBirth(LocalDate yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 
     @NotNull
-    @Column(name="LAST_NAME")
+    @Column(name="LAST_NAME", nullable = false)
     private String lastName;
 
     @NotNull
     @Column(name="YEAR_OF_BIRTH")
-    private Date yearOfBirth;
+    private LocalDate yearOfBirth;
 }

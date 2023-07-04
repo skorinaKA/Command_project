@@ -38,9 +38,12 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="genresTable.create"/>
-                <button id="editBtn" action="genresTable.edit"/>
-                <button id="removeBtn" action="genresTable.remove"/>
+                <button id="createBtn" action="genresTable.create"
+                caption="msg://genreCreateButtonName"/>
+                <button id="editBtn" action="genresTable.edit"
+                caption="msg://genreEditButtonName"/>
+                <button id="removeBtn" action="genresTable.remove"
+                caption="msg://genreRemoveButtonName"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

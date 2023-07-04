@@ -43,9 +43,12 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="bookPlacementsTable.create"/>
-                <button id="editBtn" action="bookPlacementsTable.edit"/>
-                <button id="removeBtn" action="bookPlacementsTable.remove"/>
+                <button id="createBtn" action="bookPlacementsTable.create"
+                caption="msg://bookplacementCreateButton"/>
+                <button id="editBtn" action="bookPlacementsTable.edit"
+                caption="msg://bookplacementEditButton"/>
+                <button id="removeBtn" action="bookPlacementsTable.remove"
+                caption="msg://bookplacementRemoveButton"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

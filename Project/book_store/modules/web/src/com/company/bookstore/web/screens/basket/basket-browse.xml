@@ -7,14 +7,10 @@
     <data readOnly="true">
         <collection id="basketsDc"
                     class="com.company.bookstore.entity.Basket">
-<<<<<<< Updated upstream
-            <view extends="_local"/>
-=======
             <view extends="_local">
                 <property name="user" view="_minimal"/>
                 <property name="book" view="_minimal"/>
             </view>
->>>>>>> Stashed changes
             <loader id="basketsDl">
                 <query>
                     <![CDATA[select e from bookstore_Basket e]]>
@@ -40,11 +36,8 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-<<<<<<< Updated upstream
-=======
                 <column id="user"/>
                 <column id="book"/>
->>>>>>> Stashed changes
                 <column id="count"/>
             </columns>
             <rowsCount/>
