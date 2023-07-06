@@ -28,9 +28,12 @@
                     width="100%"
                     dataContainer="authorsDc">
             <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="remove" type="remove"/>
+                <action id="create" type="create"
+                caption="msg://authorCreateButton"/>
+                <action id="edit" type="edit"
+                caption="msg://authorEditButton"/>
+                <action id="remove" type="remove"
+                caption="msg://authorRemoveButton"/>
             </actions>
             <columns>
                 <column id="firstName"/>

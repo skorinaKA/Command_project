@@ -42,9 +42,12 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="storesTable.create"/>
-                <button id="editBtn" action="storesTable.edit"/>
-                <button id="removeBtn" action="storesTable.remove"/>
+                <button id="createBtn" action="storesTable.create"
+                        caption="msg://storeCreateButton"/>
+                <button id="editBtn" action="storesTable.edit"
+                        caption="msg://storeEditButton"/>
+                <button id="removeBtn" action="storesTable.remove"
+                        caption="msg://storeDeleteButton"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

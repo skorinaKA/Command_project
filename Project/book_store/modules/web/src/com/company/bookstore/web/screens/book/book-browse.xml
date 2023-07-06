@@ -9,7 +9,10 @@
                     class="com.company.bookstore.entity.Book">
             <view extends="_local">
                 <property name="genre" view="_minimal"/>
-                <property name="author" view="_minimal"/>
+                <property name="author" view="_minimal">
+                    <property name="firstName"/>
+                    <property name="lastName"/>
+                </property>
             </view>
             <loader id="booksDl">
                 <query>
@@ -46,9 +49,12 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="booksTable.create"/>
-                <button id="editBtn" action="booksTable.edit"/>
-                <button id="removeBtn" action="booksTable.remove"/>
+                <button id="createBtn" action="booksTable.create"
+                        caption="msg://bookCreateButton"/>
+                <button id="editBtn" action="booksTable.edit"
+                        caption="msg://bookEditButton"/>
+                <button id="removeBtn" action="booksTable.remove"
+                        caption="msg://bookDeleteButton"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

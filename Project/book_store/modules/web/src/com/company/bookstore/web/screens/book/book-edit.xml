@@ -8,7 +8,10 @@
                   class="com.company.bookstore.entity.Book">
             <view extends="_local">
                 <property name="genre" view="_minimal"/>
-                <property name="author" view="_minimal"/>
+                <property name="author" view="_minimal">
+                    <property name="firstName"/>
+                    <property name="lastName"/>
+                </property>
             </view>
             <loader/>
         </instance>
