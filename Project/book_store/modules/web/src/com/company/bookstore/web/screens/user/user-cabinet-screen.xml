@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        class="com.company.bookstore.web.screens.user.UserCabinetScreen"
+        messagesPack="com.company.bookstore.web.screens.user">
+    <layout>
+        <grid>
+            <columns count="2"/>
+            <rows>
+                <row>
+                    <label value="msg://user.lastName.caption"/>
+                    <textField id="lastNameTextField" property="lastName" editable="false"/>
+                </row>
+                <row>
+                    <label value="msg://user.firstName.caption"/>
+                    <textField id="firstNameTextField" property="firstName" editable="false"/>
+                </row>
+                <row>
+                    <label value="msg://user.balance.caption"/>
+                    <textField id="balanceTextField" property="balance" editable="false"/>
+                </row>
+            </rows>
+        </grid>
+    </layout>
+</window>

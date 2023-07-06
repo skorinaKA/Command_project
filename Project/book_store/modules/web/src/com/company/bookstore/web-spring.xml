@@ -12,6 +12,7 @@
         <property name="remoteServices">
             <map>
                 <entry key="bookstore_RegistrationService" value="com.company.bookstore.service.RegistrationService"/>
+                <entry key="bookstore_BasketService" value="com.company.bookstore.service.BasketService"/>
             </map>
         </property>
     </bean>

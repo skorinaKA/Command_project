@@ -16,22 +16,27 @@ public class CustomerRole extends AnnotatedRoleDefinition {
     public final static String NAME = "Customer";
 
     @EntityAccess(entityClass = User.class, operations = {EntityOp.READ, EntityOp.UPDATE})
-    @EntityAccess(entityClass = Basket.class, operations = {EntityOp.CREATE, EntityOp.DELETE, EntityOp.READ})
+    @EntityAccess(entityClass = Basket.class, operations = {EntityOp.CREATE, EntityOp.DELETE, EntityOp.READ, EntityOp.UPDATE})
     @EntityAccess(entityClass = Book.class, operations = {EntityOp.READ})
     @EntityAccess(entityClass = BookPlacement.class, operations = {EntityOp.READ})
     @Override
     public EntityPermissionsContainer entityPermissions() {
         return super.entityPermissions();
     }
+
     @EntityAttributeAccess(entityName = "*", view = "*")
     @EntityAttributeAccess(entityClass = User.class,
             modify = {"login", "password","first_name", "last_name", "middle_name", "email", "balance", "date_of_birth"})
+    @EntityAttributeAccess(entityClass = Basket.class, modify = {"book", "count"})
     @Override
     public EntityAttributePermissionsContainer entityAttributePermissions() {
         return super.entityAttributePermissions();
     }
 
-    @ScreenAccess(screenIds = {"settings"})
+    @ScreenAccess(screenIds = {"application-bookstore","bookstore_Book.browse",
+            "bookstore_Basket.browse", "bookstore_Basket.edit",
+            "bookstore_UserCabinetScreen","settings",
+            "sec$User.lookup"})
     @Override
     public ScreenPermissionsContainer screenPermissions() {
         return super.screenPermissions();

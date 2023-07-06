@@ -9,14 +9,7 @@
                     class="com.company.bookstore.entity.Book">
             <view extends="_local">
                 <property name="genre" view="_minimal"/>
-<<<<<<< Updated upstream
-                <property name="author" view="_minimal">
-                    <property name="firstName"/>
-                    <property name="yearOfBirth"/>
-                </property>
-=======
                 <property name="author" view="_minimal"/>
->>>>>>> Stashed changes
             </view>
             <loader id="booksDl">
                 <query>
@@ -48,6 +41,7 @@
                 <column id="author"/>
                 <column id="publicationYear"/>
                 <column id="count"/>
+                <column id="price"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

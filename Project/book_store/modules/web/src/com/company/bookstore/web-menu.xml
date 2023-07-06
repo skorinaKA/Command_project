@@ -8,5 +8,7 @@
         <item screen="bookstore_BookPlacement.browse" caption="mainMsg://menu_config.bookstore_BookPlacement.browse"/>
         <item screen="bookstore_Genre.browse" caption="mainMsg://menu_config.bookstore_Genre.browse"/>
         <item screen="bookstore_Store.browse" caption="mainMsg://menu_config.bookstore_Store.browse"/>
+
     </menu>
+    <item screen="bookstore_UserCabinetScreen" caption="mainMsg://menu_config.bookstore_UserCabinetScreen"/>
 </menu-config>

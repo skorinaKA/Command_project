@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
         caption="msg://basketEdit.caption"
         focusComponent="form"
         messagesPack="com.company.bookstore.web.screens.basket">
@@ -12,18 +13,27 @@
             </view>
             <loader/>
         </instance>
+        <collection id="userDc" class="com.company.bookstore.entity.User" view="_minimal">
+            <loader id="userDl">
+                <query>
+                    <![CDATA[select e from bookstore_User e]]>
+                    <condition>
+                        <and>
+                            <c:jpql>
+                                <c:where>e.id = :userId</c:where>
+                            </c:jpql>
+                        </and>
+                    </condition>
+                </query>
+            </loader>
+        </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="basketDc">
             <column width="350px">
-                <pickerField id="userField" property="user">
-                    <actions>
-                        <action id="lookup" type="picker_lookup"/>
-                        <action id="clear" type="picker_clear"/>
-                    </actions>
-                </pickerField>
+                <lookupField id="userField" property="user" editable="true" optionsContainer="userDc"/>
                 <pickerField id="bookField" property="book">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>

@@ -31,8 +31,20 @@ public class Book extends StandardEntity {
     private LocalDate publicationYear;
 
     @PositiveOrZero
-    @Column(name = "COUNT")
+    @Column(name = "COUNT", nullable = false)
     private Integer count;
+
+    @PositiveOrZero
+    @Column(name = "PRICE", nullable = false)
+    private Double price;
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
 
     public void setGenre(Genre genre) {
         this.genre = genre;

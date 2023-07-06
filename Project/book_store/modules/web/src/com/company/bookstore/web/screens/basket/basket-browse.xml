@@ -7,17 +7,20 @@
     <data readOnly="true">
         <collection id="basketsDc"
                     class="com.company.bookstore.entity.Basket">
-<<<<<<< Updated upstream
-            <view extends="_local"/>
-=======
             <view extends="_local">
                 <property name="user" view="_minimal"/>
-                <property name="book" view="_minimal"/>
+                <property name="book" view="_local"/>
             </view>
->>>>>>> Stashed changes
             <loader id="basketsDl">
                 <query>
                     <![CDATA[select e from bookstore_Basket e]]>
+                    <condition>
+                        <and>
+                            <c:jpql>
+                                <c:where>e.user = :userId</c:where>
+                            </c:jpql>
+                        </and>
+                    </condition>
                 </query>
             </loader>
         </collection>
@@ -33,18 +36,17 @@
         </filter>
         <groupTable id="basketsTable"
                     width="100%"
-                    dataContainer="basketsDc">
+                    dataContainer="basketsDc"
+                    emptyStateMessage="msg://basketBrowse.emptyStateMessage.caption">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
+                <action id="buy"/>
             </actions>
             <columns>
-<<<<<<< Updated upstream
-=======
-                <column id="user"/>
                 <column id="book"/>
->>>>>>> Stashed changes
+                <column id="book.price"/>
                 <column id="count"/>
             </columns>
             <rowsCount/>
@@ -53,6 +55,7 @@
                 <button id="createBtn" action="basketsTable.create"/>
                 <button id="editBtn" action="basketsTable.edit"/>
                 <button id="removeBtn" action="basketsTable.remove"/>
+                <button id="buyBtn" action="basketsTable.buy" caption="msg://basketBrowse.buyBtn.caption" enable="false"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
