@@ -9,5 +9,6 @@
         <class>com.company.bookstore.entity.Book</class>
         <class>com.company.bookstore.entity.BookPlacement</class>
         <class>com.company.bookstore.entity.Store</class>
+        <class>com.company.bookstore.entity.Author</class>
     </persistence-unit>
 </persistence>

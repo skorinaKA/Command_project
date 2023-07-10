@@ -13,15 +13,27 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
-        <form id="form" dataContainer="storeDc">
-            <column width="350px">
-                <textField id="nameField" property="name"/>
-                <textField id="addressField" property="address"/>
-                <timeField id="openning_timeField" property="openning_time"/>
-                <timeField id="closing_timeField" property="closing_time"/>
-                <checkBox id="statusField" property="status"/>
-            </column>
-        </form>
+        <grid>
+            <columns count="4" />
+            <rows>
+                <row>
+                    <form id="form" dataContainer="storeDc" align="MIDDLE_LEFT">
+                        <column width="350px">
+                            <textField id="nameField" property="name"/>
+                            <textField id="addressField" property="address"/>
+                            <timeField id="openning_timeField" property="openning_time"/>
+                            <timeField id="closing_timeField" property="closing_time"/>
+                            <checkBox id="statusField" property="status"/>
+                        </column>
+                    </form>
+                </row>
+                <row>
+                    <hbox id="Maps" align="MIDDLE_LEFT"
+                          height="100%"
+                          width="100%"/>
+                </row>
+            </rows>
+        </grid>
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>

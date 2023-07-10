@@ -1,0 +1,5 @@
+@import "hover-ext";
+
+@mixin com_company_bookstore {
+  @include com_company_bookstore-hover-ext;
+}

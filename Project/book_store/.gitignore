@@ -11,3 +11,4 @@ out
 test-run
 ../.idea/*
 modules/core/db/*
+modules/web-toolkit/build/*

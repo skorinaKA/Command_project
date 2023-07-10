@@ -1,0 +1,11 @@
+@import "hover-defaults";
+@import "com.company.bookstore/hover-ext-defaults";
+@import "app-components";
+@import "com.company.bookstore/hover-ext";
+
+.hover {
+  // include auto-generated app components SCSS
+  @include app_components;
+
+  @include com_company_bookstore-hover-ext;
+}
